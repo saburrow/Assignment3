@@ -1,6 +1,9 @@
+---
 title:"Gene Expression"
 Author:"Steele Aburrow"
-Code:
+output: html_document
+theme: cosmo
+---
 #Gene_expression
 download.file("https://raw.githubusercontent.com/markziemann/SLE712_files/master/bioinfo_asst3_part1_files/gene_expression.tsv",
               destfile = "gene_expression")
