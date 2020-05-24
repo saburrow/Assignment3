@@ -1,5 +1,3 @@
-# Assignment3
-##The Assessment Repository
 download.file("https://raw.githubusercontent.com/markziemann/SLE712_files/master/bioinfo_asst3_part1_files/gene_expression.tsv",
               destfile = "gene_expression")
 ##1."Read in the file, making the gene accession numbers the row names. Show a table of values for the first six genes"
@@ -18,4 +16,3 @@ head(MeanTop10,10)
 which(Gene_expression$Means>10)
 ##5. Make a histogram plot of the mean values in png format
 hist(Gene_expression$Means, breaks = 25 )
-
