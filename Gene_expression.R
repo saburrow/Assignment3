@@ -16,3 +16,4 @@ head(MeanTop10,10)
 which(Gene_expression$Means>10)
 #5. Make a histogram plot of the mean values in png format
 hist(Gene_expression$Means, breaks = 25 )
+
