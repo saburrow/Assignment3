@@ -7,14 +7,32 @@ str(Growth_data)
 #6. Import the csv file intro an R object. What are the column names?
 colnames(Growth_data)
 #7. Calculate the mean and standard deviation of tree cirumference at the start and end of the study at both sites?
-TreeGrowth<-as.data.frame(Growth_data)
-northeast<-subset(ColumnTree, Site== "northeast")
-View(northeast)
+as.data.frame(Growth_data)
+View (TreeGrowth)
+##Subset North East (NE)
+northeast<-subset(Growth_data, Site== "northeast")
+###North East 2004 (start)
 NE2004<-(northeast$Circumf_2004_cm)
 mean(NE2004)
+sd(NE2004)
+###North East 2019 (End)
+NE2019<-(northeast$Circumf_2019_cm)
+mean(NE2019)
+sd(NE2019)
 
-colMeans(northeast,"Circumf_2004_cm", na.rm =TRUE, dims = 3)
-mean(northeast,"Circumf_2004_cm", dim)
+##Subset South West (SW)
 southwest<-subset(Growth_data, Site== "southwest")
-?rbind
- 
+###South West 2004 (start)
+SW2004<-(southwest$Circumf_2004_cm)
+mean(SW2004)
+sd(SW2004)
+###South West 2019 (end)
+SW2019<-(southwest$Circumf_2019_cm)
+mean(SW2019)
+sd(SW2019)
+
+#8. Make a box plot of tree circumference at the start and end of the study at both sights
+##Boxplot comparing North East (NE) and South West (SW) tree circumference
+boxplot(NE2004,SW2004, NE2019, SW2019, main="The Measurement of Mean Tree Circumference at Various Sites",names=c("NE2004", "SW2004", "NE2019","SW2019"),
+        col="white", xlab="Year of Measurement", ylab="Tree circumference (cm)")
+#Mean growth over the past 10 years at each site
