@@ -8,14 +8,14 @@ str(Growth_data)
 colnames(Growth_data)
 #7. Calculate the mean and standard deviation of tree cirumference at the start and end of the study at both sites?
 as.data.frame(Growth_data)
-View (TreeGrowth)
+head (TreeGrowth)
 ##Subset North East (NE)
 northeast<-subset(Growth_data, Site== "northeast")
-###North East 2004 (start)
+###North East Mean and Standard Deviation 2004 (start)
 NE2004<-(northeast$Circumf_2004_cm)
 mean(NE2004)
 sd(NE2004)
-###North East 2019 (End)
+###North East 2019 Mean and Standard Deviation(End)
 NE2019<-(northeast$Circumf_2019_cm)
 mean(NE2019)
 sd(NE2019)
@@ -36,3 +36,12 @@ sd(SW2019)
 boxplot(NE2004,SW2004, NE2019, SW2019, main="The Measurement of Mean Tree Circumference at Various Sites",names=c("NE2004", "SW2004", "NE2019","SW2019"),
         col="white", xlab="Year of Measurement", ylab="Tree circumference (cm)")
 #Mean growth over the past 10 years at each site
+head(Growth_data)
+northeast$Growth<-northeast$Circumf_2019_cm-northeast$Circumf_2009_cm
+head(northeast)
+southwest$Growth<-southwest$Circumf_2019_cm-southwest$Circumf_2009_cm
+head(southwest)
+
+#Use t.test to estimate the p-value that the 10 year growth is different at the two sites
+t.test()
+#Use Wilcox.test to estimate the p-value that the 10 year growth is different at the two sites
