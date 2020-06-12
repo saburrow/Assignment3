@@ -43,5 +43,7 @@ southwest$Growth<-southwest$Circumf_2019_cm-southwest$Circumf_2009_cm
 head(southwest)
 
 #Use t.test to estimate the p-value that the 10 year growth is different at the two sites
-t.test()
+t.test(southwest$Growth,northeast$Growth)
+
 #Use Wilcox.test to estimate the p-value that the 10 year growth is different at the two sites
+wilcox.test(southwest$Growth,northeast$Growth)
